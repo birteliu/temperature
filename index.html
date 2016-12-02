@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <title>溫濕度頁面</title>
     <style type="text/css" media="screen">
-    html,
+        html,
     body {
         width: 100%;
         height: 100%;
@@ -14,86 +14,91 @@
     }
     
     body {
-        overflow-x: hidden;
-        overflow-y: auto;
-        font-family: "蘋方-繁", "微軟繁黑體-標準", "微軟繁黑體-粗體", "微軟正黑體", sans-serif;
+        font-family: "蘋方-繁", "微軟正黑體", sans-serif;
+    }
+    
+    .page {
+        position: absolute;
+        left: calc(50% - 350px);
+        width: 700px;
+        height: 700px;
     }
     
     .thermometer {
         position: absolute;
-        left: calc(50% - 380px);
-        width: 370px;
-        height: 100%;
-        background-image: url(thermometer.png);
-        -webkit-background-size: cover;
-        background-size: cover;
+        width: 350px;
+        top: 25px;
     }
-    
+
     #temp-square {
         position: absolute;
+        bottom: 249px;
+        left: 154px;
         width: 42px;
-        height: 277px;
+        height: 160px;
         background-color: #cd2f30;
-        bottom: 220px;
-        left: 200px;
     }
-    
+
     #humi-droplet {
         position: absolute;
-        width: 35px;
-        left: 203px;
-        bottom: 40px;
-        -webkit-transform-origin: 50% -133px;
-        -o-transform-origin: 50% -133px;
-        -ms-transform-origin: 50% -133px;
-        transform-origin: 50% -133px;
+        width: 45px;
+        left: 152px;
+        bottom: 0px;
+        -webkit-transform-origin: 50% -155px;
+        -o-transform-origin: 50% -155px;
+        -ms-transform-origin: 50% -155px;
+        transform-origin: 50% -155px;
         -webkit-transform: rotate(56deg);
         -o-transform: rotate(56deg);
         -ms-transform: rotate(56deg);
-        transform: rotate(56deg);
+        transform: rotate(-98deg);
     }
-    
+
     .degree {
-        font-size: 0.9em;
-        line-height: 3.8;
         position: absolute;
-        top: 130px;
-        left: 212px;
+        top: 100px;
+        left: 165px;
+    }
+    .degree span {
+        text-align: center;
+        display: block; 
+        line-height: 55px;
         color: #f2f2f2;
     }
     
     .temp-circle {
         position: absolute;
-        top: 95px;
-        left: 415px;
+        top: 60px;
+        left: 450px;
         width: 230px;
         height: 230px;
         background-color: #cd2f30;
         border-radius: 50%;
     }
     
-    #temperature,
-    #humidity {
-        text-align: center;
-        margin-top: 0.4em;
-        font-size: 3.5em;
-        color: #fff;
-    }
-    
     .humi-circle {
         position: absolute;
-        bottom: 95px;
-        left: 415px;
+        top: 350px;
+        left: 450px;
         width: 230px;
         height: 230px;
         background-color: #05b0d8;
         border-radius: 50%;
     }
     
+    #temperature,
+    #humidity {
+        text-align: center;
+        margin-top: 20px;
+        font-size: 55px;
+        color: #fff;
+    }
+    
     h2 {
         text-align: center;
-        margin-top: 2em;
+        margin-top: 40px;
         color: #fff;
+        font-size: 30px;
     }
     
     .line {
@@ -108,19 +113,22 @@
 </head>
 
 <body>
-    <div class="thermometer">
+    <div class="page">
+        <img src="thermometer.png" alt="" class="thermometer">
         <div id="temp-square"></div>
-        <div class="degree">50°
-            <br>40°
-            <br>30°
-            <br>20°
-            <br>10°
+        <div class="degree">
+            <span>50°</span>
+            <span>40°</span>
+            <span>30°</span>
+            <span>20°</span>
+            <span>10°</span>
+            <span>0°</span>
         </div>
         <img src="droplet.png" alt="" id="humi-droplet">
         <div class="temp-circle">
             <h2>溫度</h2>
             <div class="line"></div>
-            <div id="temperature">27.5&#8451</div>
+            <div id="temperature">20&#8451</div>
         </div>
         <div class="humi-circle">
             <h2>溼度</h2>
@@ -128,7 +136,6 @@
             <div id="humidity">35&#37</div>
         </div>
     </div>
-    
 </body>
 
 </html>
